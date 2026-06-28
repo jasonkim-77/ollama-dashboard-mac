@@ -33,9 +33,10 @@ Mac 로컬 환경에서 구동되는 Ollama 서버의 `server.log`(GIN 프레임
 git clone https://github.com/jasonkim-77/ollama-dashboard-mac
 cd ollama-mac-dashboard
 
-# python3는 설치 되었다는 가정하게 진행합니다.
+# 2. 핵심 의존성 패키지 일괄 설치
+# python3은 설치 되었다는 가정을 합니다.
 
-# 2. 원클릭 동적 세팅 자동 실행 스크립트 가동
+# 3. 원클릭 동적 세팅 자동 실행 스크립트 가동
 chmod +x install.sh
 ./install.sh
 ```
@@ -63,3 +64,22 @@ chmod +x uninstall.sh
 __pycache__/
 .streamlit/
 ```
+
+## 확인사항
+로그 경우를 환경에 맞춰 변경해야 합니다.
+tail -f /opt/homebrew/var/log/ollama.log
+
+#대시보드 서비스가 등록이 되었는지 확인이 필요합니다.
+ls -l ~/Library/LaunchAgents/com.ollama.dashboard.plist
+
+#서비스 상태 확인
+echo "=== 1. 서비스 등록 상태 ===" && launchctl list | grep ollama && echo "=== 2. 웹 서버 포트(9999) 활성화 상태 ===" && netstat -an | grep 9999
+
+=== 1. 서비스 등록 상태 ===
+6861 0 homebrew.mxcl.ollama
+9200 0 com.ollama.dashboard
+=== 2. 웹 서버 포트(9999) 활성화 상태 ===
+tcp4 0 0 192.168.50.101.9999 192.168.50.21.59050 ESTABLISHED
+tcp4 0 0 127.0.0.1.9999 127.0.0.1.49407 ESTABLISHED
+tcp4 0 0 127.0.0.1.49407 127.0.0.1.9999 ESTABLISHED
+tcp4 0 0 *.9999 . LISTEN
