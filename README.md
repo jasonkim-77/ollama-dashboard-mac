@@ -33,10 +33,9 @@ Mac 로컬 환경에서 구동되는 Ollama 서버의 `server.log`(GIN 프레임
 git clone https://github.com/jasonkim-77/ollama-dashboard-mac
 cd ollama-mac-dashboard
 
-# 2. 핵심 의존성 패키지 일괄 설치
-pip install streamlit pandas plotly
+# python3는 설치 되었다는 가정하게 진행합니다.
 
-# 3. 원클릭 동적 세팅 자동 실행 스크립트 가동
+# 2. 원클릭 동적 세팅 자동 실행 스크립트 가동
 chmod +x install.sh
 ./install.sh
 ```
