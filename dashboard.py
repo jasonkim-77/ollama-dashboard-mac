@@ -5,7 +5,7 @@ import os
 import plotly.express as px
 
 # 1. Mac 로컬 Ollama 실제 로그 경로 (사용자 계정명 동적 자동 인식)
-LOG_PATH = os.path.expanduser("~/.ollama/logs/server.log")
+LOG_PATH = os.path.expanduser("/opt/homebrew/var/log/ollama.log")
 
 # 2. GIN 프레임워크 전용 고정밀 로그 파서 (토큰 저장 및 지표 확장)
 def parse_ollama_gin_logs(file_path):
