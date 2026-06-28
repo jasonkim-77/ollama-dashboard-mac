@@ -15,7 +15,7 @@ fi
 
 echo "📥 [2/4] 대시보드 필수 라이브러리 설치 중 (Streamlit, Plotly, Pandas, Ollama, Watchdog)..."
 ./.venv/bin/pip install --upgrade pip
-./.venv/bin/pip install streamlit plotly pandas requests ollama watchdog
+./.venv/bin/pip install streamlit plotly pandas requests ollama watchdog psutil
 
 # 3. Streamlit 이메일 입력창 무조건 건너뛰도록 글로벌 자격증명 강제 생성 (1회 수동 입력 대체)
 echo "🔒 [3/4] 대시보드 이메일 입력 및 웰컴 문구 자동 우회 셋팅 중..."
