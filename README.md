@@ -66,6 +66,7 @@ __pycache__/
 ```
 
 ## 확인사항
+```
 로그 경우를 환경에 맞춰 변경해야 합니다.
 tail -f /opt/homebrew/var/log/ollama.log
 
@@ -83,3 +84,4 @@ tcp4 0 0 192.168.50.101.9999 192.168.50.21.59050 ESTABLISHED
 tcp4 0 0 127.0.0.1.9999 127.0.0.1.49407 ESTABLISHED
 tcp4 0 0 127.0.0.1.49407 127.0.0.1.9999 ESTABLISHED
 tcp4 0 0 *.9999 . LISTEN
+```
